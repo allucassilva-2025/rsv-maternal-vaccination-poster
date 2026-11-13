@@ -5084,6 +5084,16 @@ delta-document {
 }
 @page { size:2160px 3840px; margin:0; }
 
+/* Center the content vertically within the fixed poster canvas. */
+delta-document {
+  display:flex;
+  flex-direction:column;
+  justify-content:safe center;
+}
+delta-document > * {
+  flex-shrink:0;
+}
+
 </style>
 </head>
 <body>
