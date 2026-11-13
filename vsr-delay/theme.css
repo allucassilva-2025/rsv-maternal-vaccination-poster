@@ -1,0 +1,27 @@
+delta-vsr-delay{display:block;font-family:var(--delta-sans,Arial,sans-serif);color:var(--delta-ink,#222);background:var(--delta-paper,#f5f1e8);padding:.5rem 0}
+delta-vsr-delay .delay-controls{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin-bottom:.85rem}
+delta-vsr-delay .delay-modes{display:flex;flex-wrap:wrap;gap:.4rem}
+delta-vsr-delay button,delta-vsr-delay select{font:inherit;font-size:.8em;padding:.45rem .65rem;color:inherit;background:transparent;border:1px solid #bdb5a7;border-radius:5px;cursor:pointer}
+delta-vsr-delay button[aria-pressed=true]{background:#e4ded2;border-color:#514c44;font-weight:700}
+delta-vsr-delay button:focus-visible,delta-vsr-delay select:focus-visible{outline:2px solid #0072b2;outline-offset:2px}
+delta-vsr-delay .delay-title{font-weight:700;font-size:1em;margin-bottom:.65rem}
+delta-vsr-delay .delay-legend{display:flex;gap:.6rem 1.2rem;flex-wrap:wrap;font-size:.82em}
+delta-vsr-delay .delay-legend span{display:inline-flex;align-items:center;gap:.4rem}
+delta-vsr-delay .delay-legend i{display:inline-block;width:1.6rem;border-top-width:2px}
+delta-vsr-delay svg{display:block;width:100%;height:auto}
+delta-vsr-delay svg text{font:12px Arial,sans-serif;fill:var(--delta-ink,#222)}
+delta-vsr-delay svg .delay-axis{font-size:14px;font-weight:700}
+delta-vsr-delay .delay-note{font-size:.7em;line-height:1.45;color:var(--delta-mute,#5e584f);margin-top:.4rem}
+
+delta-vsr-delay .delay-results{margin-top:1.45rem}
+delta-vsr-delay .delay-results h3{font-size:.9em;margin:.25rem 0 .45rem}
+delta-vsr-delay .delay-table-wrap{overflow-x:auto}
+delta-vsr-delay table{width:100%;border-collapse:collapse;font-size:.81em;line-height:1.3;font-variant-numeric:tabular-nums}
+delta-vsr-delay th,delta-vsr-delay td{padding:.38rem .45rem;border:1px solid #d5cec3;text-align:right;white-space:nowrap}
+delta-vsr-delay th{background:#e9e2d7;font-weight:700}
+delta-vsr-delay td:first-child,delta-vsr-delay th:first-child,delta-vsr-delay td:nth-child(2),delta-vsr-delay th:nth-child(2){text-align:left}
+delta-vsr-delay tbody tr:nth-child(even){background:#f1ebe1}
+delta-vsr-delay .delay-results p{font-size:.67em;line-height:1.4;margin:.4rem 0;color:var(--delta-mute,#5e584f)}
+
+delta-vsr-delay table { min-width:0; width:100%; table-layout:fixed; }
+delta-vsr-delay th, delta-vsr-delay td { white-space:normal; overflow-wrap:break-word; padding:.35rem .2rem; }

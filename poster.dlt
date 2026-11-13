@@ -1,0 +1,81 @@
+<document lang="en" type="article" theme-accent="teal" theme="poster.css">
+  <title>Severe RSV in Infants Following Maternal Vaccination Rollout in Brazil: Observed Cases and Counterfactual Estimates</title>
+  <meta>
+    <meta-item key="Authors">Lucas Vieira Silva · Mateus Galvão</meta-item>
+    <meta-item key="Advisor">Leonardo Bastos</meta-item>
+    <meta-item key="Contact">al.lucas.silva@impatech.edu.br · al.mateus.galvao@impatech.edu.br</meta-item>
+  </meta>
+  <import src="./vsr-curves" />
+  <import src="./vsr-delay" />
+  <import src="./vsr-counterfactual" />
+  <columns id="poster-flow">
+    <column>
+      <section id="introduction" num="1">
+        <title>Introduction</title>
+        <p>Respiratory syncytial virus (RSV) causes severe respiratory disease in young infants. Brazil introduced maternal RSV vaccination through its Unified Health System (SUS) in December 2025, aiming to protect infants during their first six months [1].</p>
+        <p>Historical seasonality and age-group relationships provide a reference for assessing subsequent changes in case counts. Reporting delays can obscure recent trends.</p>
+      </section>
+      <section id="objective" num="2">
+        <title>Objective</title>
+        <p>Compare observed severe RSV cases in infants aged 0–6 months after rollout with a counterfactual based on pre-campaign seasonality and cases in older children.</p>
+      </section>
+      <vsr-curves lang="en" />
+      <section id="methods" num="3">
+        <title>Methods</title>
+        <p><strong>Data.</strong> Public SIVEP-Gripe records of RSV-associated severe acute respiratory infection (SARI), grouped by symptom-onset week and age in months: [0,6], (6,12], (12,24], and (24,48].</p>
+        <p><strong>Counterfactual.</strong> A regional negative binomial generalized additive model used seasonality, older age-group series, and recent changes in their volume. Training covered 2021–November 2025; 2,000 simulated trajectories quantified the accumulated difference.</p>
+        <p><strong>Analysis period.</strong> January 4–August 8, 2026. The November 2 extract provided at least 84 days of follow-up per week. December was a transition period. A later sensitivity extension corrected both the infant series and older age-group predictors for delay.</p>
+        <p><strong>Delay comparison.</strong> Successive extracts formed symptom-week by extract-date triangles. Gaps were imputed when needed. Both corrections were evaluated on the same weeks.</p>
+        <columns>
+          <column>
+            <subsection id="bastos">
+              <title>Bastos correction [2]</title>
+              <p>Bayesian negative binomial model fitted with INLA, including temporal and delay effects. Applied to 50 imputed triangles.</p>
+            </subsection>
+          </column>
+          <column>
+            <subsection id="simple">
+              <title>Simple correction</title>
+              <p>Simulated additions from historical weeks with similar delays, weighted by recency with a 56-day half-life.</p>
+            </subsection>
+          </column>
+        </columns>
+
+      </section>
+      <section id="delay-comparison" num="4">
+    <title>Delay correction comparison</title>
+        <vsr-delay />
+        <p><strong>Exploratory comparison.</strong> The simple correction had lower MAE and WIS in the three evaluated weeks. This small evaluation gives limited evidence of general performance. MAE = mean absolute error; WIS = weighted interval score. Lower is better.</p>
+  </section>
+    </column>
+  </columns>
+  <section id="results" num="5">
+    <title>Results</title>
+    <p><strong>Seasonality.</strong> Recurring annual peaks support seasonal modeling. Processing and exploratory analyses build on Ingrid Silva Carvalho’s notebook [3], adapted by the authors with data updated through November 2026.</p>
+    <p>Primary comparison · infants aged 0–6 months · January 4–August 8, 2026</p>
+    <columns id="result-metrics">
+      <column><p><strong>11,656</strong>Observed cases</p></column>
+      <column><p><strong>22,561</strong>Expected cases · simulated median</p></column>
+      <column><p><strong>48.3%</strong>Below the historical reference</p><p>95% simulation interval · 43.1%–53.2%</p></column>
+    </columns>
+    <p><strong>Interpretation.</strong> Expected cases assume that pre-campaign seasonality and age-group relationships continued. The interval is conditional on this model and its predictors.</p>
+    <vsr-counterfactual />
+    <p><strong>Model assessment.</strong> Internal retrospective evaluation in January–July 2024 and 2025 yielded MAE 73.8 cases/week, WIS 39.9, and 81.0% coverage of nominal 95% intervals. This development evaluation showed undercoverage; independent calibration remains unestablished.</p>
+  </section>
+  <section id="conclusion" num="6">
+    <title>Conclusion and limitations</title>
+    <p>Observed severe RSV cases in infants aged 0–6 months were below the historical model reference after maternal vaccination rollout.</p>
+    <p>The ecological design, unavailable individual vaccination status, interval undercoverage, and concurrent changes in prevention or surveillance prevent causal attribution. The 48.3% difference is conditional on the model and cannot be interpreted as vaccine effectiveness. Linked vaccination and case data are needed to assess population-level impact.</p>
+  </section>
+  <section id="references" num="7">
+    <title>References</title>
+    <list marker="number">
+      <item>Brazilian Ministry of Health. Maternal RSV vaccination strategy. 2025. bvsms.saude.gov.br/bvs/publicacoes/estrategia_vacinacao_vsr_gestantes.pdf</item>
+      <item>Bastos LS et al. A modelling approach for correcting reporting delays in disease surveillance data. Statistics in Medicine. 2019;38:4363–4377. doi:10.1002/sim.8303.</item>
+      <item>Carvalho IS. Infectious Diseases — exploratory data analysis [Jupyter notebook; translated title]. Code adapted and dataset updated by the authors through November 2026. <link to="https://drive.google.com/file/d/1cU6Qxgcshclu-chAnJjDjrss_yfPd937/view?usp=drive_link">Original notebook (Google Drive)</link>.</item>
+    </list>
+    <figure numbered="false" id="ingrid-notebook-qr" src="./ingrid-notebook-qr.svg" alt="QR code linking to Ingrid Silva Carvalho's original notebook">
+      <caption>Scan to access Ingrid Silva Carvalho’s original notebook.</caption>
+    </figure>
+  </section>
+</document>

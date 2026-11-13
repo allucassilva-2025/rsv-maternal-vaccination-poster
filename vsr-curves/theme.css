@@ -1,0 +1,31 @@
+delta-vsr-curves {display:block;font-family:var(--delta-sans,Arial,sans-serif);color:var(--delta-ink,#222);background:var(--delta-paper,#fff);padding:0.5rem 0;}
+delta-vsr-curves .vsr-title {font-weight:600;font-size:1.1em;margin-bottom:0.8rem;}
+delta-vsr-curves .vsr-toggle {margin-bottom:0.4rem;}
+delta-vsr-curves .vsr-legend {display:flex;flex-wrap:wrap;gap:0.4rem 1rem;font-size:0.85em;font-weight:700;margin-bottom:0.25rem;}
+delta-vsr-curves .vsr-legend-item {display:inline-flex;align-items:center;gap:0.35rem;}
+delta-vsr-curves .vsr-swatch {display:inline-block;width:1rem;height:0.18rem;}
+delta-vsr-curves .vsr-plot {display:block;width:100%;height:auto;touch-action:pan-y;}
+delta-vsr-curves svg text {fill:var(--delta-ink,#222);font:13px Arial,sans-serif;}
+delta-vsr-curves .vsr-grid {display:none;}
+delta-vsr-curves .vsr-recent {fill:var(--delta-surface-2,#e9e9e9);}
+delta-vsr-curves .vsr-vaccine {stroke:#000000;stroke-width:1.5;stroke-dasharray:4 3;}
+delta-vsr-curves .vsr-vaccine-label {fill:#000000;font-weight:600;}
+
+delta-vsr-curves .vsr-counterfactual {stroke:#d62728;stroke-dasharray:7 4;}
+delta-vsr-curves .vsr-equation {font-size:0.88em;text-align:center;margin:0.25rem 0 0.35rem;white-space:nowrap;}
+delta-vsr-curves .vsr-eq-f {color:#d62728;font-weight:700;}
+delta-vsr-curves .vsr-eq-blue {color:#0072b2;font-size:1.2em;font-weight:700;}
+delta-vsr-curves .vsr-eq-orange {color:#cc6600;font-size:1.2em;font-weight:700;}
+delta-vsr-curves .vsr-eq-purple {color:#a34a88;font-size:1.2em;font-weight:700;}
+delta-vsr-curves .vsr-eq-note {font-size:0.8em;color:#555;font-style:italic;font-weight:400;}
+delta-vsr-curves .vsr-coef {font-size:17px;font-weight:700;paint-order:stroke;stroke:var(--delta-paper,#f7f2e8);stroke-width:4;stroke-linejoin:round;}
+delta-vsr-curves .vsr-coef-1 {fill:#0072b2;}
+delta-vsr-curves .vsr-coef-2 {fill:#cc6600;}
+delta-vsr-curves .vsr-coef-3 {fill:#a34a88;}
+
+delta-vsr-curves .vsr-fx-label {fill:#d62728;font-size:17px;font-weight:700;paint-order:stroke;stroke:var(--delta-paper,#f7f2e8);stroke-width:4;stroke-linejoin:round;}
+
+delta-vsr-curves .vsr-axis-title-x,delta-vsr-curves .vsr-axis-title-y {font-size:15px;font-weight:700;}
+delta-vsr-curves .vsr-plot text[transform^="rotate(-90"] {font-size:15px;font-weight:700;}
+
+.illustration-controls{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.illustration-controls button{font:inherit;font-size:.8em;padding:7px;border:1px solid #bdb5a7;border-radius:4px;background:transparent;color:inherit}.illustration-controls button[aria-pressed=true]{background:#e4ded2;font-weight:bold}delta-vsr-curves svg{width:100%;height:auto}delta-vsr-curves .vsr-legend i{display:inline-block;width:18px;height:3px;margin-right:5px}.illustration-note{font-size:.78em;line-height:1.4;text-align:left}

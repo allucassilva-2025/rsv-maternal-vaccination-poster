@@ -1,0 +1,134 @@
+/* HU22 poster canvas: keep the requested 2160 x 3840 portrait proportion. */
+delta-document {
+  aspect-ratio: 2160 / 3840;
+  box-sizing: border-box;
+  width: min(100%, 2160px);
+  max-width: none;
+  height: auto;
+  margin: 0 auto;
+  padding: 4% 6%;
+
+  --delta-t-base: 15px;
+  --delta-t-h1: clamp(34px, 4vw, 68px);
+  --delta-t-h2: clamp(22px, 2vw, 34px);
+  --delta-t-h3: clamp(18px, 1.6vw, 27px);
+  --delta-t-h4: clamp(16px, 1.4vw, 23px);
+  --delta-t-deck: clamp(15px, 1.4vw, 24px);
+  --delta-leading: 1.35;
+  --delta-leading-tight: 1.08;
+  --delta-section-gap: 34px;
+  --delta-block-gap: 16px;
+}
+
+/* Keep a column's introduction inside its column. */
+delta-column delta-intro {
+  margin-inline-end: 0;
+}
+
+delta-document > delta-title {
+  margin-top: 0;
+  max-width: 100%;
+  text-wrap: balance;
+}
+
+/* Justified body text throughout the poster. */
+delta-document delta-p { display: block; text-align: justify; }
+
+/* Original notebook QR code, with a clear scanning margin. */
+delta-figure#ingrid-notebook-qr { display:block; width:180px; max-width:100%; margin:18px 0 0; }
+delta-figure#ingrid-notebook-qr img { display:block; width:180px; max-width:100%; height:auto; background:#fff; }
+
+/* Compact the poster after balancing both content columns. */
+delta-document { --delta-section-gap:24px; --delta-block-gap:12px; padding:3% 5%; }
+#results { margin-top:24px; }
+#references { display:grid; grid-template-columns:minmax(0,1fr) 180px; column-gap:24px; align-items:start; }
+#references > delta-title { grid-column:1 / -1; }
+#references > delta-list { grid-column:1; }
+#references > delta-figure { grid-column:2; margin-top:0; }
+@media(max-width:700px){#references {display:block;}}
+
+/* Separate the two short method descriptions. */
+#methods > delta-columns {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  column-gap:0;
+  align-items:stretch;
+  margin-block:18px;
+}
+#methods > delta-columns > delta-column {
+  box-sizing:border-box;
+  min-width:0;
+}
+#methods > delta-columns > delta-column:first-child {
+  padding-right:22px;
+}
+#methods > delta-columns > delta-column + delta-column {
+  border-left:1px solid #cfc6b8;
+  padding-left:22px;
+}
+#methods > delta-columns delta-p {
+  text-align:left;
+}
+
+/* Read down the first column, then continue into the second. */
+delta-columns#poster-flow {
+  display:block;
+}
+delta-columns#poster-flow > delta-column {
+  display:block;
+  column-count:2;
+  column-gap:32px;
+  column-fill:balance;
+}
+#poster-flow #introduction,
+#poster-flow #objective,
+#poster-flow delta-vsr-curves,
+#poster-flow #methods > delta-columns,
+#poster-flow #delay-comparison {
+  break-inside:avoid;
+}
+#poster-flow #methods {
+  break-inside:auto;
+}
+#poster-flow delta-title {
+  break-after:avoid;
+}
+#poster-flow delta-p {
+  orphans:3;
+  widows:3;
+}
+@media(max-width:700px) {
+  delta-columns#poster-flow > delta-column { column-count:1; }
+}
+
+#ingrid-notebook-qr > delta-caption > .lbl { display:none; }
+
+/* Make the primary comparison readable at a glance. */
+#result-metrics { display:grid; grid-template-columns:1fr 1fr 1.35fr; gap:16px; margin:16px 0; }
+#result-metrics > delta-column { padding:14px 18px; background:#eae5da; border-top:3px solid #26766c; }
+#result-metrics delta-p { text-align:left; font-family:Arial,sans-serif; font-size:.9em; line-height:1.4; margin:0; }
+#result-metrics delta-strong { display:block; font-size:2em; line-height:1.15; margin-bottom:7px; }
+#poster-flow delta-p { text-align:left; }
+#poster-flow #methods > delta-p { break-inside:avoid; }
+delta-document > delta-title { font-size:clamp(32px,3.3vw,62px); line-height:1.12; }
+@media(max-width:700px) { #result-metrics {grid-template-columns:1fr;} }
+
+#result-metrics delta-p + delta-p { margin-top:6px; font-size:.78em; }
+
+/* Fixed portrait poster canvas: 2160 × 3840 px (9:16). */
+html, body {
+  margin:0;
+  min-width:2160px;
+}
+delta-document {
+  width:2160px !important;
+  min-width:2160px;
+  max-width:2160px !important;
+  height:3840px !important;
+  min-height:3840px;
+  aspect-ratio:9 / 16;
+  box-sizing:border-box;
+  margin:0 auto !important;
+  padding:72px 108px !important;
+}
+@page { size:2160px 3840px; margin:0; }
